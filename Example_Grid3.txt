@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mount Olympus News</title>
+<style>
+
+body {  
+	font-family: verdana, sans-serif; 
+	font-size: small;
+	margin: 0;
+	padding: 0;}
+
+ul { 
+	padding: 0px; }
+
+li {    
+	list-style: none;
+	margin: 10px 0; }
+
+header, footer {
+	background-color: gray;	
+}
+
+#wrapper {
+	background-color:yellow; 
+	display:grid;
+  	grid-template-rows: 100px 400px 100px; 
+	grid-template-columns: auto min-content auto ;}
+	
+	div {border:1px solid black;}
+
+	#one {}
+	#two{background-color:red; }
+	#three{}
+	#four{}
+	#five{background-color:lightblue;}
+	#six{background-color:green;}
+	#seven{}
+	#eight{background-color:orange;}
+	#nine{}
+	
+
+</style>
+</head>
+
+<body>
+
+	<div id="wrapper">
+		
+		<div id="one">Here's a little text</div>
+	
+		<div id="two"><img src="images/olympus.jpg" alt="Mt. Olympus"></div>
+
+		<div id="three">Mt Olympus</div>
+
+		<div id="four">Four</div>
+
+		<div id="five">Five</div>
+
+		<div id="six">Six</div>
+
+		<div id="seven">Seven</div>
+
+		<div id="eight">Eight</div>
+
+		<div id="nine">Nine</div>
+
+	</div><!-- END WRAPPER -->
+	</body>
+</html>
