@@ -27,11 +27,14 @@ li {
 	margin: 10px 0; }
 	
 div, header, main, footer {
-	padding:10px;}
+	padding:10px;
+}
 
 #wrapper {
 	background-color:yellow; 
 	padding:0;
+	padding:10px;
+	gap:10px;
 }
 	
 header, footer {
@@ -49,12 +52,13 @@ main {
 	#wrapper {
 	background-color:yellow; 
 	display:grid;
-	grid-template-rows: [header-start] 100px [main-start] 1fr [footer-start] 100px; 
-  	grid-template-columns: [news] 25% [main] 1fr [links] 200px;
+	grid-template-rows: [header-start] 6.25rem [main-start] 1fr [footer-start] 6.25rem; 
+  	grid-template-columns: [news] minmax(12.25rem, 20%) [main] 1fr [links] 12.5rem;
   	grid-template-areas: 
     "header  header  header"
     "news     main    links"
     "footer  footer  footer";
+	
 	}
 }
 	
