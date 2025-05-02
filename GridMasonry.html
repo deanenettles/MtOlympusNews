@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masonry-Style Layout</title>
+    <link rel="stylesheet" href="normalize.css">
+    <!-- https://www.youtube.com/watch?v=J8H122wQAKU -->
+    <style>
+        * {box-sizing:border-box;}
+        body {background-color:#f7f7f7;}
+
+        header {background:#fff; padding:10px;}
+
+        /* NAV */ 
+        nav {
+            max-width:1400px;
+            margin:0 auto;
+            display:grid;
+            grid-template-columns:repeat(5, 1fr);
+            text-align:center;
+            align-items:center;
+        }
+        nav a {
+            text-decoration:none;
+            color:gray;
+        }
+        nav div h1 {
+            font-size:1.5rem;
+            font-family:arial; 
+            line-height:.50;       
+        }
+        nav div h1:first-child {
+            font-weight:800
+        }
+        nav div h1:last-child {
+            font-weight:400;
+            color:gray;
+            letter-spacing:1px;
+        }
+
+        /* MAIN */
+        main {
+            max-width:75rem;
+            margin:3.75rem auto;
+            padding:20px;
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:1.5rem;
+            grid-auto-rows:250px;
+        }
+
+        main div {
+            overflow:hidden;
+            border-radius:12px;
+            padding:10px;
+            box-shadow:3px 3px 3px rgba(0,0,0,0.05);
+        }
+
+        main .short {grid-row:span 1}
+        main .tall {grid-row:span 2}
+
+        @media only screen and (max-width: 900px){
+            main {grid-template-columns:repeat(2, 1fr);}
+        }
+
+        @media only screen and (max-width: 600px){
+            main {
+                grid-template-columns:1fr;
+                max-width:450px;
+                grid-auto-rows:500px;
+            }
+        }
+
+        /* IMAGES */
+        img {max-width:105%;}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/">Photos</a>
+            <div>
+                <h1>Express</h1>
+                <h1>Yourself</h1>
+            </div>
+            <a href="/">Illust</a>
+            <a href="/">Bio</a>
+        </nav>
+    </header>
+    <main>
+        <div class="short">
+            <h3>A note about style</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam vero culpa ipsum repellendus?</p>
+            <a href="/">Read More...</a>
+        </div>
+        <div class="short">
+            <img src="images/bust.jpg" alt="sculpture bust of a woman">
+        </div>
+        <div class="short">
+            <h3>Note 2 about style</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam vero culpa ipsum repellendus?</p>
+            <a href="/">Read More...</a>
+        </div>
+        <div class="tall">
+            <img src="images/bust.jpg" alt="sculpture bust of a woman">
+        </div>
+        <div class="tall">
+            <h3>Note 3 about style</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam vero culpa ipsum repellendus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nisi inventore ut recusandae! Voluptatem, aperiam.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam vero culpa ipsum repellendus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nisi inventore ut recusandae! Voluptatem, aperiam.</p>            <a href="/">Read More...</a>
+        </div>
+        <div class="short">
+            <img src="images/bust.jpg" alt="sculpture bust of a woman">
+        </div>
+        <div class="short">
+            <h3>A note about style</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam vero culpa ipsum repellendus?</p>
+            <a href="/">Read More...</a>
+        </div>
+        <div class="short">
+            <img src="images/bust.jpg" alt="sculpture bust of a woman">
+        </div>
+        <div class="short">
+            <h3>Note 2 about style</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam vero culpa ipsum repellendus?</p>
+            <a href="/">Read More...</a>
+        </div>
+        <div class="tall">
+            <img src="images/bust.jpg" alt="sculpture bust of a woman">
+        </div>
+        <div class="tall">
+            <h3>Note 3 about style</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam vero culpa ipsum repellendus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nisi inventore ut recusandae! Voluptatem, aperiam.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam vero culpa ipsum repellendus? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nisi inventore ut recusandae! Voluptatem, aperiam.</p>            <a href="/">Read More...</a>
+        </div>
+        <div class="short">
+            <img src="images/bust.jpg" alt="sculpture bust of a woman">
+        </div>
+
+    </main>
+</body>
+</html>
