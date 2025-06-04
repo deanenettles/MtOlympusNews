@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Test</title>
+    <style>
+        /* Add your CSS styles here */
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap:1rem;
+            margin-top:1rem;
+        }
+
+        .flex-item {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            color:white;
+            text-align: center;
+            line-height: 100px;
+            font-size: 24px;
+            background: url(images/bust.jpg) no-repeat center center;
+            background-size:cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add your HTML structure here -->
+
+    <div class="flex-container">
+        <div class="flex-item">Item 1</div>
+        <div class="flex-item">Item 2</div>
+        <div class="flex-item">Item 3</div>
+        <div class="flex-item">Item 4</div>
+        <div class="flex-item">Item 5</div>
+    </div>
+
+    <script>
+        // Add your JavaScript code here
+    </script>
+
+    <!-- Add your JavaScript file(s) here -->
+
+<!--
+Create a responsive flex container with five flex items. Each flex item should have a unique background color, centered text, and a font size of 24px.
+
+Add a gap of 1rem between the flex items.
+
+Center the flex container horizontally and vertically.
+
+Make the flex items wrap when the screen size is less than 600px.
+
+Add a hover effect to the flex items that changes the background color to blue and increases the font size by 2px.
+
+Add a JavaScript function that randomly changes the background color and font size of each flex item every 2 seconds.
+
+Save the HTML and CSS code in separate files and link them to the HTML file using the <link> tag.
+</body>
+</html>
