@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {font-size:calc(1rem + 10vw);letter-spacing:calc(-3px * 1);}
+        h2 {font-size:calc(1rem*(1.333 * 4));letter-spacing:calc(-3px * 1);}
+        h3 {font-size:calc(1rem*(1.333 * 3));letter-spacing:calc(-3px * .5);}
+        h4 {font-size:calc(1rem*(1.333 * 2));}
+        h5 {font-size:calc(1rem * 1.333);}
+        h6 {font-size:1rem;}
+
+        .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(100% / 3 - 30px), 1fr));
+  gap: 15px;
+  padding: 15px;
+  background-color: #f0f0f0;
+}
+
+.grid-item {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.box {
+  --a: 1;
+  --b: 2.5;
+  --result: calc(var(--a) + var(--b));
+  height: calc(var(--result) * 10px);
+  width: calc(var(--result) * 200px);
+  border: 1px solid;
+  margin-top:1rem;
+  padding:1rem;
+}
+
+.alt {
+  --a: 2;
+}
+    </style>
+</head>
+<body>
+    <h1>Header h1</h1>
+    <h2>Header h2</h2>
+    <h3>Header h3</h3>
+    <h4>Header h4</h4>
+    <h5>Header h5</h5>
+    <h6>Header h6</h6>
+
+    <div class="grid-container">
+  <div class="grid-item">Item 1</div>
+  <div class="grid-item">Item 2</div>
+  <div class="grid-item">Item 3</div>
+  <div class="grid-item">Item 4</div>
+  <div class="grid-item">Item 5</div>
+</div>
+
+<div class="box">
+ my height is equal to 30px because result is evaluated to 3 (1+2)
+</div>
+
+<div class="box alt">
+ my height is equal to 40px because result is evaluated to 4 (2+2)
+</div>
+</body>
+</html>
