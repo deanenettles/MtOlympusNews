@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Add your CSS styles here */
+        * {box-sizing:border-box;}
+        body {font-family: Arial, sans-serif;padding: 1lh;}
+        header {
+            background-color: #333;
+            color: #fff;
+            padding:inherit;
+        }
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 0;
+        }
+
+        article {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        .test1{
+            line-height:1.225;
+        }
+        .test2 {
+            padding: 1.5lh;
+        }
+
+        footer {padding:inherit; background-color: #333; color: #fff; padding:inherit; }
+
+        a:link, a:visited {color:white; text-decoration: none; }
+        a:hover, a:focus, a:active {color:yellow;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+        <p><a href="https://webkit.org/blog/16831/line-height-units/?mc_cid=c370ed1749&mc_eid=b3340511e6" target="_blank">Webkit on Line Height Units</a></p>
+    </header>
+    <section>
+
+        <article class="test1">
+            <h2>padding 1.5rem;</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus, odio eget fringilla faucibus, magna diam bibendum ligula, vitae lobortis mauris lectus eget mi. Aliquam sagittis, odio vehicula malesuada vulputate, augue tortor sagittis leo, a auctor orci leo at tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce sit amet blandit mi. Pellentesque massa diam, euismod sit amet lectus quis, tristique pharetra enim. Pellentesque id laoreet est, ac consectetur neque. Pellentesque faucibus nulla a odio euismod, ut consectetur nibh aliquet. Nam ut gravida mi, non lacinia magna. Suspendisse potenti. Praesent lobortis nibh sit amet elit commodo, ac maximus quam faucibus. Nulla blandit tellus orci, sed commodo magna ullamcorper in.</p>
+
+            <p>Nullam dui tortor, convallis ut dui aliquam, dictum auctor sem. Quisque pulvinar velit ac eros posuere rhoncus. Suspendisse vitae blandit lacus. Etiam vehicula at orci sed gravida. Sed maximus nisl quam, sed feugiat augue sodales id. Vivamus vestibulum nibh ac felis hendrerit posuere. Sed a elit vitae odio dignissim consectetur. Cras rhoncus eu lacus accumsan ultrices. Nulla facilisi. Nullam vitae dolor ex. Maecenas porta enim ante, a lobortis risus cursus vitae.</p>
+        </article>
+        <article class="test2">
+            <h2>padding 1.5lh;</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque tempus, odio eget fringilla faucibus, magna diam bibendum ligula, vitae lobortis mauris lectus eget mi. Aliquam sagittis, odio vehicula malesuada vulputate, augue tortor sagittis leo, a auctor orci leo at tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce sit amet blandit mi. Pellentesque massa diam, euismod sit amet lectus quis, tristique pharetra enim. Pellentesque id laoreet est, ac consectetur neque. Pellentesque faucibus nulla a odio euismod, ut consectetur nibh aliquet. Nam ut gravida mi, non lacinia magna. Suspendisse potenti. Praesent lobortis nibh sit amet elit commodo, ac maximus quam faucibus. Nulla blandit tellus orci, sed commodo magna ullamcorper in.</p>
+
+            <p>Nullam dui tortor, convallis ut dui aliquam, dictum auctor sem. Quisque pulvinar velit ac eros posuere rhoncus. Suspendisse vitae blandit lacus. Etiam vehicula at orci sed gravida. Sed maximus nisl quam, sed feugiat augue sodales id. Vivamus vestibulum nibh ac felis hendrerit posuere. Sed a elit vitae odio dignissim consectetur. Cras rhoncus eu lacus accumsan ultrices. Nulla facilisi. Nullam vitae dolor ex. Maecenas porta enim ante, a lobortis risus cursus vitae.</p>
+        </article>
+    </section>
+    <footer>
+        &copy; 2025 Deane Nettles. All rights reserved.
+    </footer>
+</body>
+</html>
