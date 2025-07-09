@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structure Test</title>
+    <meta name="description" content="Test of creating a structure">
+    <style>
+        * {outline:1px solid red;}
+        html {box-sizing:border-box;}
+        *, *:before, *:after; {box-sizing:inherit;}
+        #wrapper {max-width:1000px; margin:0 auto;}
+        header, nav, main, footer {display:flex; flex-direction:column; gap:20px; background-color:#ddd; padding:20px; justify-content:center;}
+        header {justify-content:flex-start; align-items:center;}
+        main {background-color:pink;}
+        section, aside {padding:20px; flex-grow:1; text-align:center; background-color:tan; }
+        section:nth-child(2) {background-color:olive; color:white; display:flex; flex-direction:column; gap:10px;}
+        article {padding:20px; background-color:tan; color:black;}
+        .logo {width:100px; height:100px; background-color:red;}
+        header h1, header h2 {text-align:center;}
+        ul {display:flex; margin:0; padding:0;}
+        li {list-style-type:none;}
+
+        @media screen and (min-width:600px) {
+            header, nav, main, footer { flex-direction:row;}
+            header h1, header h2, nav, footer {text-align:left;}
+
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="logo">
+                Logo
+            </div>
+            <div class="text">
+                <h1>Deane Nettles</h1>
+                <h2>Graphic Designer and Instructor</h2>
+            </div>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="link.html">Link</a></li>
+                </ul>
+        </nav>
+        <main>
+            <section>
+                Section
+            </section>
+            <section>
+                <article>
+                    Article
+                </article>
+                <article>
+                    Article
+                </article>
+                <article>
+                    Article
+                </article>
+            </section>
+            <aside>
+                Aside
+            </aside>
+
+        </main>
+        <footer>
+            Footer
+        </footer>
+
+    </div> <!-- close wrapper-->
+</body>
+</html>
