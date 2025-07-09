@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="normalize.css" rel="stylesheet">
+    <style>
+        * {outline:1px solid red;}
+        html {box-sizing:border-box; line-height:1.2rem;}
+        *, *:after, *:before {box-sizing:inherit;}
+        body {margin:0; padding:0;}
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        /* STRUCTURE */
+        #wrapper {width:100%; max-width:67.5rem; margin:0 auto;}
+        #bkgd_img {background-repeat:no-repeat; background-size:cover; background-image:url(images/IMG_5936.avif);}
+        header {padding:18px 71px 20px 80px;}
+        .logo {height:97px; float:left;}
+        nav {width:428px; height:25px; margin-top:22px; float:right; text-align:right;}
+        main {height:475px; padding:47px 20px 0 80px;}
+        section{width:100%; max-width:460px; }
+        footer {height:64px; padding:20px 80px;}
+
+        /* TYPOGRAPHY */
+        h1 {height:130px;}
+        h2 {height:94px; margin-bottom:28px;}
+        .button {width:224px; text-align:center; background-color:#333; color:#fff; padding:18px 0; text-decoration:none; border-radius:5px; font-size:1.2;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="bkgd_img" class="clearfix">
+            <header class="clearfix">
+                <div class="logo">Logo</div>
+                <nav>Nav</nav>
+            </header>
+            <main>
+                <section>
+                    <h1>h1</h1>
+                    <h2>h2</h2>
+                    <a href=""><div class="button">Button</div></a>
+
+                </section>
+            </main>
+        </div><!-- end #bkgd_img -->
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>
