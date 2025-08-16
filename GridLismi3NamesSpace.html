@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html {box-sizing:border-box; margin:0; padding:0;}
+        html {box-sizing:border-box; }
         * {box-sizing:inherit}
+        body {margin:0; padding:0;}
         #wrapper {
             height: 100vh;
             display:grid;
@@ -17,8 +18,7 @@
             "ads main main . links"
             "footer footer footer footer2 . "
             "footer3 footer3 footer3 footer3 footer3";
-            gap:10px 10px;
-            padding-bottom:10px;
+            gap:0 0;
         }
         div:not(#wrapper) {padding:20px;}
         #one {background-color:red; grid-area:header;}
