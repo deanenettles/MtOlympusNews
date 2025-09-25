@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {box-sizing:border-box;}
+        * {box-sizing:inherit}
+        #wrapper {
+            display:grid;
+            grid-template-rows:1fr 2fr 1fr;
+            grid-template-columns:25% minmax(15rem, 50rem) 25%;
+        }
+        div:not(#wrapper) {padding:20px;}
+        #one {background-color:red;}
+        #two {background-color:orange;}
+        #three {background-color:yellow;}
+        #four {background-color:yellowgreen;}
+        #five {background-color:green;}
+        #six {background-color:turquoise;}
+        #seven {background-color:blue;}
+        #eight {background-color:purple;}
+        #nine {background-color:violet;}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="one">One</div>
+        <div id="two">Two</div>
+        <div id="three">Three</div>
+        <div id="four">Four</div>
+        <div id="five">Five</div>
+        <div id="six">Six</div>
+        <div id="seven">Seven</div>
+        <div id="eight">Eight</div>
+        <div id="nine">Nine</div>
+    </div>
+    
+</body>
+</html>
