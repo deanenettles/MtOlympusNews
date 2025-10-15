@@ -6,11 +6,12 @@
     <title>Color Test oklch</title>
     <style>
 	body {padding:60px;}
-	div {width:200px; height:200px; padding:20px; text-align:center;}
+	div {width:200px; height:200px; padding:20px; text-align:center; outline:0px solid gray;}
     /* shade, saturation, hue */
         .one { background-color:oklch(0.8 0.12 100);  }
         .two { background-color:oklch(0.8 0.12 200);}
         .three { background-color:oklch(0.8 0.12 300);}
+        .four { background-color:oklch(.99 0 300);}
 
     </style>
 </head>
@@ -18,8 +19,9 @@
     <div class="one">oklch(0.8 0.12 100)</div>
     <div class="two">oklch(0.8 0.12 200)</div>
     <div class="three">oklch(0.8 0.12 300)</div>
+    <div class="four">oklch(.99 0 300)</div>
 
-    <p>First number is brightness 0-1, 1 is Second number is saturation 0-1, 1 is bright. Third number is color to 600</p>
+    <p>First number is brightness 0-1, 1 is bright. Second number is saturation 0-1, 0 is no saturation. Third number is color to 300</p>
     <p>0=magenta</p>
     <p>50=red</p>
     <p>100=orange</p>
