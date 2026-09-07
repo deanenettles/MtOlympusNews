@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spacing Control</title>
+    <meta name="description" content="Interactive control of font family, size, letter spacing and line height.">
+    <style>
+        #wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        #controls {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            width: min(400px, 90vw);
+        }
+        #controls label {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            font-family: system-ui, sans-serif;
+            font-size: 0.9rem;
+        }
+        body {
+            font-family: "Times New Roman", Times, serif;
+        }
+        h1 {text-align:left; margin-bottom:0; line-height:1; padding-bottom:0;}
+        p {
+            max-width: 80vw;
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: 0;
+            font-kerning:auto;
+        }
+        #fontFamily {height:2rem; padding:.4rem}
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Spacing control</h1>
+        <p id="text">Because many students are choosing or feel pressure to shift to learning and problem-solving with AI, in less than three years these technologies have driven major shifts in campus culture.</p>
+        <div id="controls">
+            <label>
+                Font:
+                <select id="fontFamily">
+                    <option value='"Times New Roman", Times, serif'>Times New Roman</option>
+                    <option value='Georgia, Courier'>Georgia</option>
+                    <option value="Arial, Helvetica, sans-serif">Arial</option>
+                    <option value="Verdana, Courier">Verdana</option>                
+                </select>
+            </label>
+            <label>
+                Font-Size: <span id="fontSizeValue">16px</span>
+                <input type="range" id="fontSize" min="10" max="144" step="1" value="16">
+            </label>
+            <label>
+                Line-Height (Leading): <span id="lineHeightValue">1.4</span>
+                <input type="range" id="lineHeight" min="1" max="3" step="0.025" value="1.4">
+            </label>
+            <label>
+                Letter-Spacing (Tracking): <span id="letterSpacingValue">0em</span>
+                <input type="range" id="letterSpacing" min="-0.1" max="0.25" step="0.01" value="0">
+            </label>
+        </div>
+    </div>
+    <script>
+        const text = document.getElementById('text');
+        const fontFamily = document.getElementById('fontFamily');
+        const fontSize = document.getElementById('fontSize');
+        const lineHeight = document.getElementById('lineHeight');
+        const letterSpacing = document.getElementById('letterSpacing');
+        const fontSizeValue = document.getElementById('fontSizeValue');
+        const lineHeightValue = document.getElementById('lineHeightValue');
+        const letterSpacingValue = document.getElementById('letterSpacingValue');
+
+        fontFamily.addEventListener('change', () => {
+            document.body.style.fontFamily = fontFamily.value;
+        });
+
+        fontSize.addEventListener('input', () => {
+            text.style.fontSize = `${fontSize.value}px`;
+            fontSizeValue.textContent = `${fontSize.value}px`;
+        });
+
+        lineHeight.addEventListener('input', () => {
+            text.style.lineHeight = lineHeight.value;
+            lineHeightValue.textContent = lineHeight.value;
+        });
+
+        letterSpacing.addEventListener('input', () => {
+            text.style.letterSpacing = `${letterSpacing.value}em`;
+            letterSpacingValue.textContent = `${letterSpacing.value}em`;
+        });
+    </script>
+</body>
+</html>
