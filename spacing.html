@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spacing Control</title>
-    <meta name="description" content="Interactive control of font family, size, letter spacing and line height.">
+    <meta name="description" content="Interactive control of font family, size, letter spacing, word spacing, and line height.">
     <style>
         /* Center page content vertically and stack sections */
         #wrapper {
@@ -51,6 +51,7 @@
             font-size: 16px;
             line-height: 1.5;
             letter-spacing: 0;
+            word-spacing: 0;
             font-kerning: auto;
         }
 
@@ -110,6 +111,12 @@
                 Letter-Spacing (Tracking): <span id="letterSpacingValue">0em</span>
                 <input type="range" id="letterSpacing" min="-0.1" max="0.25" step="0.001" value="0">
             </label>
+
+            <!-- Extra space between words (in em; added to the normal word gap) -->
+            <label>
+                Word-Spacing: <span id="wordSpacingValue">0em</span>
+                <input type="range" id="wordSpacing" min="-0.2" max="1" step="0.01" value="0">
+            </label>
         </div>
     </div>
 
@@ -121,9 +128,11 @@
         const fontSize = document.getElementById('fontSize');
         const lineHeight = document.getElementById('lineHeight');
         const letterSpacing = document.getElementById('letterSpacing');
+        const wordSpacing = document.getElementById('wordSpacing');
         const fontSizeValue = document.getElementById('fontSizeValue');
         const lineHeightValue = document.getElementById('lineHeightValue');
         const letterSpacingValue = document.getElementById('letterSpacingValue');
+        const wordSpacingValue = document.getElementById('wordSpacingValue');
 
         // Restore saved paragraph text, or fall back to the HTML default
         const STORAGE_KEY = 'spacingTextContent';
@@ -159,6 +168,12 @@
         letterSpacing.addEventListener('input', () => {
             text.style.letterSpacing = `${letterSpacing.value}em`;
             letterSpacingValue.textContent = `${letterSpacing.value}em`;
+        });
+
+        // Update word-spacing and its displayed value
+        wordSpacing.addEventListener('input', () => {
+            text.style.wordSpacing = `${wordSpacing.value}em`;
+            wordSpacingValue.textContent = `${wordSpacing.value}em`;
         });
     </script>
 </body>
