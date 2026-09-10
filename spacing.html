@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spacing Control</title>
-    <meta name="description" content="Interactive control of font family, size, letter spacing, word spacing, and line height.">
+    <meta name="description" content="Interactive control of font family, size, letter spacing, word spacing, line height, and font kerning.">
     <style>
         /* Center page content vertically and stack sections */
     
@@ -68,6 +68,30 @@
             font-family: system-ui, sans-serif;
             font-size: 0.9rem;
         }
+
+        /* Radio options laid out in a row within the control group */
+        .radio-group {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .radio-group legend {
+            font-family: system-ui, sans-serif;
+            font-size: 0.9rem;
+            padding: 0;
+            margin-bottom: 0.25rem;
+        }
+
+        .radio-group label {
+            flex-direction: row;
+            align-items: center;
+            gap: 0.35rem;
+        }
     </style>
 </head>
 <body>
@@ -118,9 +142,22 @@
                 Word-Spacing: <span id="wordSpacingValue">0em</span>
                 <input type="range" id="wordSpacing" min="-0.2" max="1" step="0.01" value="0">
             </label>
-            <label>
-                Font-Kerning:Auto
-            </label>
+            <!-- Sets font-kerning on the sample paragraph: none, normal, or auto -->
+            <fieldset class="radio-group">
+                <legend>Font-Kerning:</legend>
+                <label>
+                    <input type="radio" name="fontKerning" value="none">
+                    none
+                </label>
+                <label>
+                    <input type="radio" name="fontKerning" value="normal">
+                    normal
+                </label>
+                <label>
+                    <input type="radio" name="fontKerning" value="auto" checked>
+                    auto
+                </label>
+            </fieldset>
         </div>
     </div>
 
@@ -178,6 +215,15 @@
         wordSpacing.addEventListener('input', () => {
             text.style.wordSpacing = `${wordSpacing.value}em`;
             wordSpacingValue.textContent = `${wordSpacing.value}em`;
+        });
+
+        // Update font-kerning from the selected radio option
+        document.querySelectorAll('input[name="fontKerning"]').forEach((radio) => {
+            radio.addEventListener('change', () => {
+                if (radio.checked) {
+                    text.style.fontKerning = radio.value;
+                }
+            });
         });
     </script>
 </body>
