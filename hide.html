@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hide</title>
+    <style>
+    .inner1 {display:none;}
+	.inner2 {display:inline;}
+#outer {
+  container-type: inline-size; /* Declare a containment context */
+  container-name: outer-container; /* Name the container */
+  width:50%;
+  outline:1px solid red;
+  margin:0 auto;
+}
+    
+@container outer-container (max-width: 450px) {
+  .inner2 {
+    display: none;} /* Hides content when the container width is 500px or less */
+  .inner1 {
+    display: inline;} /* Hides content when the container width is 500px or less */
+}
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <p>Here's a sentence with <span class="inner1">This is inner 1</span>
+        <span class="inner2">This is inner 2</span> in it.</p>
+    </div>
+
+</body>
+</html>
