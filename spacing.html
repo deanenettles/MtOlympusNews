@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spacing Control</title>
-    <meta name="description" content="Interactive control of font family, size, letter spacing, word spacing, line height, and font kerning.">
+    <meta name="description" content="Interactive control of font family, size, characters per line, letter spacing, word spacing, line height, and font kerning.">
     <style>
         /* Center page content vertically and stack sections */
     
@@ -72,8 +72,8 @@
         }
 
         #text {
-            max-width:72ch;
-            margin:0 auto;
+            max-width: 72ch;
+            margin: 0 auto;
             text-wrap: pretty;
         }
 
@@ -139,6 +139,12 @@
                 <input type="range" id="lineHeight" min=".75" max="3" step="0.025" value="1.2">
             </label>
 
+            <!-- Line length of the sample paragraph, in ch (width of the "0" glyph) -->
+            <label>
+                Characters per Line: <span id="charsPerLineValue">72</span>
+                <input type="range" id="charsPerLine" min="20" max="120" step="1" value="72">
+            </label>
+
             <!-- Horizontal space between characters (in em) -->
             <label>
                 Letter-Spacing (Tracking): <span id="letterSpacingValue">0em</span>
@@ -176,10 +182,12 @@
         const fontFamily = document.getElementById('fontFamily');
         const fontSize = document.getElementById('fontSize');
         const lineHeight = document.getElementById('lineHeight');
+        const charsPerLine = document.getElementById('charsPerLine');
         const letterSpacing = document.getElementById('letterSpacing');
         const wordSpacing = document.getElementById('wordSpacing');
         const fontSizeValue = document.getElementById('fontSizeValue');
         const lineHeightValue = document.getElementById('lineHeightValue');
+        const charsPerLineValue = document.getElementById('charsPerLineValue');
         const letterSpacingValue = document.getElementById('letterSpacingValue');
         const wordSpacingValue = document.getElementById('wordSpacingValue');
 
@@ -211,6 +219,12 @@
         lineHeight.addEventListener('input', () => {
             text.style.lineHeight = lineHeight.value;
             lineHeightValue.textContent = lineHeight.value;
+        });
+
+        // Update the sample paragraph's line length (ch ≈ one "0" wide)
+        charsPerLine.addEventListener('input', () => {
+            text.style.maxWidth = `${charsPerLine.value}ch`;
+            charsPerLineValue.textContent = charsPerLine.value;
         });
 
         // Update letter-spacing and its displayed value
